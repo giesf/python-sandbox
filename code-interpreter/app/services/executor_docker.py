@@ -287,7 +287,7 @@ class DockerExecutor(BaseExecutor):
             "--tmpfs",
             "/tmp:rw,size=64m",  # noqa: S108 - intentionally constrain container tmpfs
             "--tmpfs",
-            "/workspace:rw,uid=65532,gid=65532",  # Create workspace as tmpfs owned by the user
+            "/workspace:rw,chown=true",  # Create workspace as tmpfs owned by the user
             "--env",
             "PYTHONUNBUFFERED=1",
             "--env",
